@@ -1,0 +1,22 @@
+<h2><%=l(:label_fess)%></h2>
+
+<div id="redmineFess">
+  <form id="searchForm">
+    <input id="searchQuery" type="text" name="query" size="30"/>
+    <input id="searchButton" type="submit" value="Search"/>
+    <input id="searchStart" type="hidden" name="start" value="0"/>
+    <input id="searchNum" type="hidden" name="num" value="20"/>
+  </form>
+</div>
+<div id="fesssubheader"></div>
+<div id="fessresult"></div>
+
+<%
+baseurl = url_for(:controller => 'code_review', :action => 'index', :id => @project) + '/../../..'
+-%>
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag(baseurl + "/plugin_assets/redmine_fess/stylesheets/fess.css") %>
+    <%= javascript_include_tag("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js") %>
+    <%= javascript_include_tag(baseurl + "/plugin_assets/redmine_fess/javascripts/jquery.url.js") %>
+    <%= javascript_include_tag(baseurl + "/plugin_assets/redmine_fess/javascripts/fess.js") %>
+<% end %>

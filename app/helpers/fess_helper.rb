@@ -1,0 +1,2 @@
+module FessHelper
+end
